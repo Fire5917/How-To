@@ -21,6 +21,7 @@ h1, h2, h3 {
     color: var(--title-color);
     margin-bottom: 0.5em;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
 }
 
 h1 {
@@ -115,4 +116,34 @@ button a {
     color: var(--background-main);
     text-decoration: none;
     background-color: var(--text-secondary);
+}
+
+strong {
+    color: var(--text-highlight);
+    font-size: 1.1em;
+}
+
+.navbar_pages {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background-color: var(--couleur-fond); 
+    padding: 10px 20px; 
+    border-radius: 25px;
+    gap: 15px;
+}
+/* Telephone */
+@media (max-width: 480px) {
+    .navbar_pages {
+        flex-direction: column;
+        padding: 5px;
+    }
+}
+
+/* Pour tablette */
+@media (max-width: 768px) {
+    .navbar_pages {
+        flex-direction: column;
+        padding: 10px;
+    }
 }
