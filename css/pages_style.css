@@ -88,3 +88,31 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Style pour les boutons */
+button {
+    background-color: var(--text-secondary);
+    color: var(--background-main);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--text-highlight);
+}
+
+button a {
+    color: var(--background-main);
+    text-decoration: none;
+    background-color: var(--text-secondary);
+}
