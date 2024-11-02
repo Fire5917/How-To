@@ -1,0 +1,231 @@
+/* CSS pour la nav bar et le footer */
+/* 
+> Classe navbar --> .navbar
+> ID banière du haut --> #top_banner
+> Classe footer --> .footer
+> Classe contenu footer --> .footer_content
+> Classe page courante --> .current_page
+> Bas de footer --> .footer_bottom
+*/
+
+:root {
+    --couleur-fond: #121212; /* Fond sombre */
+    --couleur-texte: #e0e0e0; /* Texte principal clair */
+    --couleur-secondaire: #bb86fc; /* Violet pastel pour accents */
+    --couleur-accent: #03dac6; /* Vert cyané pour appels à l'action */
+    --couleur-blanc: #ffffff; /* Blanc pur pour certains éléments */
+}
+
+* {
+    background-color: var(--couleur-fond);
+    color: var(--couleur-texte);
+}
+
+#top_banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--couleur-secondaire);
+    text-align: center;
+}
+
+.help_first_letter {
+    color: var(--couleur-accent);
+    font-weight: bold;
+    display: inline-block;
+}
+
+#top_banner span:not(.help_first_letter) {
+    display: inline-block;
+    animation: toggleVisibility 8s infinite;
+}
+
+@keyframes toggleVisibility {
+    0% {
+        opacity: 1;
+    }
+    12.5% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0; 
+    }
+    62.5% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background-color: var(--couleur-fond); 
+    padding: 10px 20px; 
+    border-radius: 25px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--couleur-secondaire);
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: large;
+    background-color: transparent;
+    transition: color 0.3s ease;
+}
+
+.navbar a.current_page {
+    border-radius: 18px;
+    text-decoration: underline;
+}
+
+.navbar a:hover {
+    border-radius: 18px;
+    color: var(--couleur-accent);
+    text-decoration: underline;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around; 
+    align-items: flex-start; 
+    background-color: var(--couleur-fond); 
+    padding: 20px;
+}
+
+.footer_content h2 {
+    color: var(--couleur-secondaire);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer_content p {
+    margin: 5px 0;
+}
+
+.footer_content ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    gap: 10px;
+}
+
+.footer_content ul li a img {
+    width: 24px; 
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.footer_content ul li a:hover img {
+    transform: rotate(15deg);
+}
+
+.footer_bottom {
+    display: flex;
+    justify-content: center;
+    color: var(--couleur-secondaire);
+    padding: 10px 0;
+    font-size: 0.9em;
+}
+
+#back_to_top img {
+    width: 24px; 
+    height: 24px;
+    transition: transform 0.6s ease;
+}
+
+#back_to_top img:hover {
+    transform: rotate(-45deg);
+}
+
+#back_to_top {
+    text-decoration: none;
+    color: var(--couleur-texte);
+}
+
+/* Responsive : petit écran (téléphone) */
+@media (max-width: 480px) {
+    #top_banner {
+        font-size: 1.2em;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .navbar a {
+        padding: 5px;
+        margin: 5px 0;
+        font-size: small;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .footer_content h2 {
+        font-size: 1em;
+    }
+
+    .footer_content p {
+        font-size: 0.9em;
+    }
+
+    .footer_content ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #back_to_top img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .footer_bottom {
+        font-size: 0.8em;
+        text-align: center;
+    }
+}
+
+/* Responsive : moyen écran (tablette) */
+@media (max-width: 768px) {
+    #top_banner {
+        font-size: 1.5em;
+        padding: 15px;
+        flex-direction: column;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar a {
+        padding: 8px 15px;
+        font-size: medium;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_content {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .footer_content ul {
+        justify-content: center;
+    }
+}
